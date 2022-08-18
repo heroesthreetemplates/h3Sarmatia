@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $(".pl").hide();
+  $(".ru").hide();
+  $(".uk").hide();
+
+  $(".p2").hide();
+  $(".p3").hide();
+  $(".p4").hide();
+  $(".p5").hide();
+  $(".p6").hide();
+  $(".p7").hide();
+  $(".p8").hide();
+  $(".p9").hide();
+  $(".p10").hide();
+  $(".p11").hide();
+  $(".p12").hide();
+  $(".p13").hide();
+  $(".p14").hide();
+  $(".p15").hide();
+  $(".p16").hide();
+  $(".p17").hide();
+  $(".p18").hide();
+  $(".p19").hide();
+  $(".p20").hide();
+  $(".p21").hide();
+
+
+  var lang = 'en';
+  var languages = ['en', 'pl', 'ru', 'uk'];
+
+  var langChange = function(l) {
+    lang = l;
+    
+    languages.forEach( la => {
+      var current = "." + la;
+      if( la === l ) {
+        $(current).fadeIn();
+      } else {
+        $(current).hide();
+      }
+    } )
+  }
+
+  $("img.enflag").click(function(){
+    langChange('en')
+  });
+  $("img.plflag").click(function(){
+    langChange('pl')
+  });
+  $("img.ruflag").click(function(){
+    langChange('ru')
+  });
+  $("img.ukflag").click(function(){
+    langChange('uk')
+  });
+
+
+
+  var pageNr = 1;
+  var pagesNumber = 22;
+
+  var faade = function($nr) {
+    pageNr = $nr;
+    var current = ".p" + $nr;
+
+    for (let i = 1; i < pagesNumber; i++) {
+      var id = ".p" + i;
+      if( $nr === i ) {
+        $(id).fadeIn();
+      } else {
+        $(id).hide();
+      }
+    } 
+    
+  };
+
+  $(".prev").click(function(){
+    pageNr -= 1;
+    if( pageNr < 1 ) {
+      pageNr = 1;
+    }
+    faade(pageNr);
+  });
+  $(".next").click(function(){
+    pageNr += 1;
+    if( pageNr > pagesNumber - 1 ) {
+      pageNr = pagesNumber - 1;
+    }
+    faade(pageNr);
+  });
+  
+
+  $(".btn1").click(function(){
+    faade(1);
+  });
+  $(".btn2").click(function(){
+    faade(2)
+  });
+  $(".btn3").click(function(){
+    faade(3)
+  });
+  $(".btn4").click(function(){
+    faade(4);
+  });
+  $(".btn5").click(function(){
+    faade(5)
+  });
+  $(".btn6").click(function(){
+    faade(6)
+  });
+  $(".btn7").click(function(){
+    faade(7);
+  });
+  $(".btn8").click(function(){
+    faade(8)
+  });
+  $(".btn9").click(function(){
+    faade(9)
+  });
+  $(".btn10").click(function(){
+    faade(10);
+  });
+  $(".btn11").click(function(){
+    faade(11);
+  });
+  $(".btn12").click(function(){
+    faade(12)
+  });
+  $(".btn13").click(function(){
+    faade(13)
+  });
+  $(".btn14").click(function(){
+    faade(14);
+  });
+  $(".btn15").click(function(){
+    faade(15)
+  });
+  $(".btn16").click(function(){
+    faade(16)
+  });
+  $(".btn17").click(function(){
+    faade(17);
+  });
+  $(".btn18").click(function(){
+    faade(18)
+  });
+  $(".btn19").click(function(){
+    faade(19)
+  });
+  $(".btn20").click(function(){
+    faade(20)
+  });
+  $(".btn21").click(function(){
+    faade(21)
+  });
+});
+</script>
+
+<style>
+  body {
+    background: #b4dbfdad;
+  }
+
+  .marginlr {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .flag {
+    width: 3em;
+    height: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    cursor: pointer;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .large {
+    height: 7em;
+    width: 1.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .none p {
+    margin: 0.2em;
+  }
+
+  .none div {
+    margin-bottom: 1em;
+  }
+  </style>
+</head>
+<body>
+  <div class="marginlr">
+
+    <div style="display: flex" class="marginlr">
+      <div>
+        <img src="img/en-flag.webp" alt="EN" class="enflag flag">
+      </div>
+
+      <div>
+        <img src="img/pl-flag.webp" alt="PL" class="plflag flag">
+      </div>
+
+      <div>
+        <img src="img/rs-flag.webp" alt="RU" class="ruflag flag">
+      </div>
+
+      <div>
+        <img src="img/uk-flag.webp" alt="UK" class="ukflag flag">
+      </div>
+    </div>
+
+
+    <div>
+      <div style="display: flex;">
+        <button class="prev large">&lt;</button>
+
+        <div style="width: 1200px; height: 750px; display: flex; margin: 1em">
+          <div style="margin: auto; text-align: center; font-size: 1.1em;">
+            <div class="en">
+              <div class="p1">
+                <img src="setup.png">
+                <p>Select town by random, or banning. Bid for color. Don't ban heroes. Blue picks hero first. No restarts.</p>
+                <p>No special rules - you can skip guards, red rush etc.</p>
+                <p>Technical restart if there's a strong road block before snow zone with control spells.</p>
+              </div>
+
+              <div class="p2">
+                <img src="img/army.png">
+                <p>Before the game starts, think about your army composition. You should have enough money to create 3 power stacks.</p>
+              </div>
+
+              <div class="p3">
+                <img src="img/hut.png">
+                <p>Hut of the magi shows snow zone with Control Spells and Bone Dragons zone where you attack opponent.</p>
+                <strong>Now start playing!</strong>
+                <p>You can read other details easily while you play. <strong>Don't</strong> use nwctheone, cause you'll feel lost, just follow this guide and check the map step by step and you'll be fine!</p>
+              </div>
+
+              <div class="p4">
+                <img src="img/zone1small.jpg">
+                <p>First zone is connected with three roads - one will give you lvl 1 units, second - lvl 2 units, third one - random neutral units.</p>
+                <p>Also, each fraction can receive a pandora with a unit, that is underused - f.e. gargoyles or hell hounds.</p>
+                <p>Scout the best relics, you will chain for them later with Town Portals.</p>
+                <p>Split your army and flag all dwellings!</p>
+              </div>
+
+              <div class="p5">
+                <img src="img/zone5.jpg">
+                <p>Next zone has town of your fraction without fort.</p>
+                <p>Think if you want to build a fort or a magic guild.</p>
+              </div>
+
+              <div class="p6">
+                <img src="img/zone15.jpg">
+                <p>Next dirt zone has warehouses, usefull for the guild.</p>
+                <p>It also contains off-road connection to the optional zone with wood, ore and dragon utopias.</p>
+                <p>Pandoras contain lvl 1-3 fire water spells.</p>
+              </div>
+
+              <div class="p7">
+                <img src="img/zone22.jpg">
+                <p>Next, lava zone contains 3 roads: lvl 3 units, lvl 4 units and neutral.</p>
+                <p>Split your army and flag all dwellings!</p>
+              </div>
+
+              <div class="p8">
+                <img src="img/zone26.jpg">
+                <p>Next, grass zone 26 includes town of your fraction with fort.</p>
+                <p>You should be able to get here in first week.</p>
+              </div>
+
+              <div class="p9">
+                <img src="img/return.jpg">
+                <p>Think if you can use Town Portal buildings to transport your new army and clear objects that you couldn't do earlier, like gold mine or medusa stores.</p>
+              </div>
+
+              <div class="p10">
+                <img src="img/zone40.jpg">
+                <p>Next, dirt zone 40 is similar to the previous one - it contains warehouses.</p>
+                <p>It also contains off-road connection to the optional zone with Conflux and Watering Places.</p>
+                <p>Pandoras contain lvl 5 fire water spells.</p>
+              </div>
+
+              <div class="p11">
+                <img src="img/control.jpg">
+                <p>Snow Control spells zone 43 contains Fly, Dimension Door and Town Portal.</p>
+                <p>However, some extra scrolls can be generated. They will contain weak spells. Eye of the magi introduces a new mechanic. First player, who discovers control spell, will show the second player which scroll is the correct one. This balances the delay in control spells for both players.</p>
+                <p>Zone also contains 3 connections: lvl 5 units, lvl 6 units and neutral.</p>
+                <p>You should be able to get here at the beggining of a second week.</p>
+              </div>
+
+              <div class="p12">
+                <img src="img/zone47.jpg">
+                <p>Final zone 47 is either swamp or wasteland. It contains random town (aligned with neutral units) and 2 connections - lvl 7 unit and strong neutral unit. Neutral unit zone 63 can contain pandora with army.</p>
+              </div>
+
+              <div class="p13">
+                <img src="img/clear.jpg">
+                <p>Use remaining time in second week to backtrack via Town Portals and clear the map completly.</p>
+                <p>Get all the relics that you've scouted earlier!</p>
+              </div>
+
+              <div class="p14">
+                <img src="img/bone.jpg">
+                <p>Go back to your starting town and go to the Ghost Dragon zone 5 via off-road connection. You can get some gold, relics and army here.</p>
+              </div>
+
+              <div class="p15">
+                <img src="img/127.jpg">
+                <p>On 127 put your heroes near portals. On 131 chain all the army and attack Portals (monoliths). They will be protected by ~70 Bone Dragnons or ~60 Ghost Dragons. Don't attack underground gate just yet! Guard is much stronger. Portals will allow you to attack your enemy. Remember, you can skip guards with fly/dd.</p>
+                <p>If you can't attack on 131 and you can see on Eye of the Magi, that opponent also won't attack, extend simultaneous turns. If you can attack earlier, shorten them.</p>
+              </div>
+
+              <div class="p16">
+                <img src="img/131.jpg">
+                <p>Small portal will send you to the connection zone. Put your heroes on Watering places and attack enemy's Utopia zone! Remember, you can skip guards with fly/dd.</p>
+              </div>
+
+              <div class="p17">
+                <img src="img/132.jpg">
+                <p>Large portal will allow you to attack enemy's Conflux zone.</p>
+              </div>
+
+              <div class="p18">
+                <img src="img/under.jpg">
+                <p>When you get stronger army, you can use Underground gate for attack. Whlie portals are guarded by ~60 Ghost Dragons, Underground gate is protected by ~130 Ghost Dragons. Use it to attack enemy's main town directly!</p>
+              </div>
+
+              <div class="p19">
+                <img src="img/end.jpg">
+                <p>When you get even stronger army, you can use Underground gates in lvl 7 zones for a surprise attack! Be careful, guard is 250k. Have Fun!</p>
+              </div>
+
+              <div class="p20 none" style="text-align: left">
+                <h3>FAQ</h3>
+                <p><strong>I think that some hero / unit / building / way of playing is too weak or too strong.</strong></p>
+                <p>That's great! This template will be constantly tweaked. Send me your replay on discord Gavin Magnus#1278, I will analyse it and make a nerf or buff.</p>
+                <div></div>
+
+                <p><strong>Why strong mages (Solmyr, Alamar) are not banned?</strong></p>
+                <p>Very specific nerfs to magic have been applied to allow their presence. However, if they will be too strong, further nerfs will be applied.</p>
+                <div></div>
+
+                <p><strong>What are the main goals of this template?</strong></p>
+                <ul>
+                  <li>Large map with balanced control spells.</li>
+                  <li>No creature banks - town creatures instead.</li>
+                  <li>Maximum length of simultaneous turns.</li>
+                  <li>Possibility to get back into game after losing army (you always have creatures to buy).</li>
+                </ul>
+                <div></div>
+
+                <p><strong>Why are there so many mountains?</strong></p>
+                <p>Heroes 3 map generator has tons of problems. This approach is <strong>precisely</strong> used to handle many of generator problems. This way of generating assures that maps are better balanced and zones are not "weird". Additionally, it nerfs Dimension Door spell.</p>
+                <div></div>
+
+                <p><strong>Why are there so many town portal buildings?</strong></p>
+                <p>To nerf Town portal spell and allow all-map long hero chains quite early.</p>
+                <div></div>
+
+                <p><strong>Why are there so little towns?</strong></p>
+                <p>Right now there are way too many towns in popular templates - not every zone should contain a town. Less towns reduce the advantage of winning player and nerf already powerful Town portal spell.</p>
+                <div></div>
+
+                <p><strong>Should I play h3Sarmatia everyday?</strong></p>
+                <p>Play with a different town and tactic for a few days, then take a break. As other mirrors h3Sarmatia is extremely fair, but can get repetitive if played the same way.</p>
+                <div></div>
+
+                <p><strong>How to make mirror templates?</strong></p>
+                <p>Check out <a href="https://heroes.thelazy.net//index.php/Mirror_Template">https://heroes.thelazy.net//index.php/Mirror_Template</a></p>
+                <div></div>
+              </div>
+
+              <div class="p21">
+                <h3>Credits</h3>
+                <p>Author:</p>
+                <p><strong>Gavin Magnus</strong></p>
+
+                <br>
+
+                <p>Very Special Thanks (in alphabetical order):</p>
+                <p><strong>Error_315, Jahanif, Ponczek, Zuuzel</strong></p>
+
+                <br>
+
+                <p>Special Thanks (in alphabetical order):</p>
+                <p><strong>Amazon, Fantom, GrayFace, Ignus, Iriniko, Lothid, Oddish, Tyranuxus, Wojrad, Xenofex</strong></p>
+                <p><strong>H3gg, Jaskinia Behemota, The HotA Crew</strong></p>
+              </div>
+            </div>
+
+            <div class="pl">
+
+
+              <ul>
+                <li>Duża mapa ze sprawiedliwą kontrolą</li>
+                <li>Rezygnacja z banków stworzeń na rzecz rozbudowy miast</li>
+                <li>Maksymalnie długie tury symultanicznie</li>
+                <li>Możliwość odbicia się po "wyjebce"</li>
+              </ul>
+            </div>
+              
+            <div class="ru">
+              rurururu
+            </div>
+              
+            <div class="uk">
+              ukukuk
+            </div>
+          </div>
+        </div>
+
+        <button class="next large">&gt;</button>
+      </div>
+
+      <div class="marginlr">
+        <button class="btn1">1</button>
+        <button class="btn2">2</button>
+        <button class="btn3">3</button>
+        <button class="btn4">4</button>
+        <button class="btn5">5</button>
+        <button class="btn6">6</button>
+        <button class="btn7">7</button>
+        <button class="btn8">8</button>
+        <button class="btn9">9</button>
+        <button class="btn10">10</button>
+        <button class="btn11">11</button>
+        <button class="btn12">12</button>
+        <button class="btn13">13</button>
+        <button class="btn14">14</button>
+        <button class="btn15">15</button>
+        <button class="btn16">16</button>
+        <button class="btn17">17</button>
+        <button class="btn18">18</button>
+        <button class="btn19">19</button>
+        <button class="btn20">20</button>
+        <button class="btn21">21</button>
+      </div>
+      
+    </div>
+
+
+  </div>
+</body>
+</html>
