@@ -1,269 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>h3Sarmatia</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-
-  $(".pl").hide();
-  $(".ru").hide();
-  $(".uk").hide();
-
-  $(".p2").hide();
-  $(".p3").hide();
-  $(".p4").hide();
-
-
-  var lang = 'en';
-  var languages = ['en', 'pl', 'ru', 'uk'];
-
-  var langChange = function(l) {
-    lang = l;
-    
-    languages.forEach( la => {
-      var current = "." + la;
-      if( la === l ) {
-        $(current).fadeIn();
-      } else {
-        $(current).hide();
-      }
-    } )
-  }
-
-  $("img.enflag").click(function(){
-    langChange('en')
-  });
-  $("img.plflag").click(function(){
-    langChange('pl')
-  });
-  $("img.ruflag").click(function(){
-    langChange('ru')
-  });
-  $("img.ukflag").click(function(){
-    langChange('uk')
-  });
-
-
-
-  var pageNr = 1;
-  var pagesNumber = 4;
-
-  var faade = function($nr) {
-    pageNr = $nr;
-    var current = ".p" + $nr;
-
-    for (let i = 1; i < pagesNumber; i++) {
-      var id = ".p" + i;
-      if( $nr === i ) {
-        $(id).fadeIn();
-      } else {
-        $(id).hide();
-      }
-    } 
-    
-  };
-
-  $(".prev").click(function(){
-    pageNr -= 1;
-    if( pageNr < 1 ) {
-      pageNr = 1;
-    }
-    faade(pageNr);
-  });
-  $(".next").click(function(){
-    pageNr += 1;
-    if( pageNr > pagesNumber - 1 ) {
-      pageNr = pagesNumber - 1;
-    }
-    faade(pageNr);
-  });
-  
-
-  $(".btn1").click(function(){
-    faade(1);
-  });
-  $(".btn2").click(function(){
-    faade(2)
-  });
-  $(".btn3").click(function(){
-    faade(3)
-  });
-  $(".btn4").click(function(){
-    faade(4);
-  });
-});
-</script>
+  <title>h3Sarmatia</title>
 
 <style>
-  body {
-    background: #b4dbfdad;
-  }
-
-  .marginlr {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+  html, body {
+      margin: 0;
+      height: 100%;
+      background-color: black;
   }
 
   .flag {
-    width: 3em;
-    height: 2em;
-    margin-left: 1em;
-    margin-right: 1em;
-    cursor: pointer;
+    width: 50%;
   }
-
-  button {
-    cursor: pointer;
-    border: 1px solid #c9c9c9;
-  }
-
-  .large {
-    height: 7em;
-    width: 1.5em;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
-  .none p {
-    margin: 0.2em;
-  }
-
-  .none div {
-    margin-bottom: 1em;
-  }
-  </style>
+</style>
 </head>
 <body>
 
-  <strong><a style="text-decoration: none; font-weight: bold;" href="./index.html">&#129128;</a></strong>
-  
-  <div class="marginlr">
-
-    <div style="display: flex" class="marginlr">
-      <div>
-        <img src="img/en-flag.webp" alt="EN" class="enflag flag">
-      </div>
-
-      <div>
-        <img src="img/pl-flag.webp" alt="PL" class="plflag flag">
-      </div>
-
-      <div>
-        <img src="img/rs-flag.webp" alt="RU" class="ruflag flag">
-      </div>
-
-      <div>
-        <img src="img/uk-flag.webp" alt="UK" class="ukflag flag">
-      </div>
-    </div>
-
-
+  <div style="text-align: center">
     <div>
-      <div style="display: flex;">
-        <button class="prev large">&lt;</button>
-
-        <div style="width: 1200px; height: 755px; display: flex; margin: 1em">
-          <div style="margin: auto; text-align: center; font-size: 1.1em;">
-            <div class="en">
-              <div class="p1">
-                <img src="setup.png">
-                <p>Select town by random, or banning. Bid for color. Don't ban heroes. Blue picks hero first. No restarts.</p>
-                <p>No special rules - you can skip guards, red rush etc.</p>
-                <p>You may take a technical restart if there's a strong road block before snow zone with control spells or there are no dwellings in a dwellings zone.</p>
-              </div>
-
-              <div class="p2">
-                <img src="img/army.png">
-                <p>Before the game starts, think about your army composition. You should have enough money to create 3 power stacks.</p>
-              </div>
-
-              <div class="p3">
-                <img src="img/hut.png">
-                <p>Hut of the magi shows snow zone with Control Spells and Bone Dragons zone where you attack opponent.</p>
-                <strong>Now start playing!</strong>
-                <p><strong>Don't</strong> use nwctheone, cause you'll feel lost. Seriously - this template is pretty easy if you discover it zone by zone.</p>
-              </div>
-            </div>
-
-            <div class="pl">
-
-              <div class="p1">
-                <img src="setup.png">
-                <p>Wybierz miasto losowo lub poprzez banowanie. Wylicytuj kolor. Nie banuj bohaterów. Niebieski wybiera bohatera jako pierwszy. Brak restartów.</p>
-                <p>Brak specjalnych zasad – możesz pominąć strażników, red rush itp.</p>
-                <p>Możesz wziąć restart techniczny w przypadku silnego bloku na drodze przed strefą śniegu z zaklęciami kontrolnymi albo brakiem dwelli w strefie dwelli.</p>
-              </div>
-
-              <div class="p2">
-                <img src="img/army.png">
-                <p>Zanim rozpocznie się gra, zastanów się nad kompozycją swojej armii. Powinieneś mieć wystarczająco dużo złota, aby stworzyć 3 power-stacki.</p>
-              </div>
-
-              <div class="p3">
-                <img src="img/hut.png">
-                <p>Chata maga pokazuje strefę śniegu z zaklęciami kontrolnymi i strefę Ghost Dragonów, gdzie atakujesz przeciwnika.</p>
-                <strong>Teraz zacznij grać!</strong>
-                <p><strong>Nie</strong> używaj nwctheone, poczujesz się zagubiony. Poważnie - ten szablon jest całkiem prosty, jeśli odkryjesz go strefa po strefie.</p>
-              </div>
-
-            </div>
-              
-            <div class="ru">
-              
-              <div class = "p1">
-                <img src = "setup.png">
-                <p>Выберите город случайным образом или методом исключения. Tорговаться за цвет. Не баньте героев. Синий выбирает героя первым. Рестарты нет.</p>
-                <p>Никаких специальных правил — вы можете пропустить охрану, red rush и т. д.</p>
-                <p>Технический перезапуск в случае сильного перекрытия дороги перед снежной зоной с заклинаниями контроля или нет зданий для существ.</p>
-              </div>
-
-              <div class = "p2">
-                <img src="img/army.png">
-                <p> Перед началом игры подумайте о составе своей армии. Вы получите достаточно золота, чтобы создать 3 power-stacks.</p>
-              </div>
-
-              <div class = "p3">
-                <img src="img/hut.png">
-                <p> Хижина мага показывает снежную зону с заклинаниями контроля и зона призрачных драконов, где вы атакуете своего противника.</p>
-                <strong>Начните играть на карте!</strong>
-                <p><strong> Не используйте </strong> nwctheone, вы будете чувствовать себя потерянным. Серьезно — этот шаблон довольно прост, если вы исследуете его зона за зоной.</p>
-              </div>
-              
-            </div>
-              
-            <div class="uk">
-              
-              <div class = "p1">
-                <img src="setup.png">
-                <p>Виберіть місто випадково або методом виключення. Торгуватися за колір. Не забороняйте героїв. Синій обирає героя першим. Рестарти нема.</p>
-                <p>Жодних спеціальних правил - ви можете пропустити охорону, red rush і т. д.</p>
-                <p>Технічний перезапуск у разі сильного перекриття дороги перед сніговою зоною із заклинаннями контролю чи ні будівель для істот.</p>
-              </div>
-
-              <div class = "p2">
-                <img src="img/army.png">
-                <p> Перед початком гри подумайте про склад своєї армії. Ви отримаєте достатньо золота, щоб створити 3 power-stacks.</p>
-              </div>
-
-              <div class = "p3">
-                <img src="img/hut.png">
-                <p>Хатина мага показує снігову зону із заклинаннями контролю та зона примарних драконів, де ви атакуєте свого супротивника.</p>
-                <strong>Почніть грати на карті!</strong>
-                <p><strong> Не використовуйте </strong> nwctheone, ви будете відчувати себе втраченим. Серйозно цей шаблон досить простий, якщо ви досліджуєте його зона за зоною.</p>
-              </div>
-
-          </div>
-        </div>
-
-        <button class="next large">&gt;</button>
-      </div>      
+      <img src="title.png" alt="h3Sarmatia">
     </div>
-
-
+    <div style="font-style: italic; font-size: 1.1em; color: #b0b0b0;">
+      Developed 2018 - 2022, premiered in 2022
+    </div>
+    <img src="swieca.jpg" class="flag">
+    <div style="font-style: italic; font-size: 1.1em; color: #b0b0b0;">
+      I would like to apologize for everyone interested. I have no idea about marketing and I had no idea how to proceed.
+    </div>
+    <p></p>
+    <div style="font-style: italic; font-size: 1.1em; color: #b0b0b0;">
+      Gavin Magnus
+    </div>
   </div>
+
 </body>
 </html>

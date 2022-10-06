@@ -2,146 +2,37 @@
 <html>
 <head>
   <title>h3Sarmatia</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $(".pl").hide();
-  $(".ru").hide();
-  $(".uk").hide();
-
-  var lang = 'en';
-  var languages = ['en', 'pl', 'ru', 'uk'];
-
-  var langChange = function(l) {
-    lang = l;
-    
-    languages.forEach( la => {
-      var current = "." + la;
-      if( la === l ) {
-        $(current).fadeIn();
-      } else {
-        $(current).hide();
-      }
-    } )
-  }
-
-  $("img.enflag").click(function(){
-    langChange('en')
-  });
-  $("img.plflag").click(function(){
-    langChange('pl')
-  });
-  $("img.ruflag").click(function(){
-    langChange('ru')
-  });
-  $("img.ukflag").click(function(){
-    langChange('uk')
-  });
-});
-</script>
 
 <style>
   html, body {
       margin: 0;
       height: 100%;
-  }
-
-  a:link {
-    text-decoration: none;
-  }
-
-  body {
-    background: #b4dbfdad;
-  }
-
-  p {
-    font-size: 1.5em;
-    margin-bottom: 1em;
+      background-color: black;
   }
 
   .flag {
-    width: 3em;
-    height: 2em;
-    margin-left: 1em;
-    margin-right: 1em;
-    cursor: pointer;
+    width: 50%;
   }
 </style>
 </head>
 <body>
 
-  <div style="display: flex" class="marginlr">
+  <div style="text-align: center">
     <div>
-      <img src="img/en-flag.webp" alt="EN" class="enflag flag">
-    </div>
-
-    <div>
-      <img src="img/pl-flag.webp" alt="PL" class="plflag flag">
-    </div>
-
-    <div>
-      <img src="img/rs-flag.webp" alt="RU" class="ruflag flag">
-    </div>
-
-    <div>
-      <img src="img/uk-flag.webp" alt="UK" class="ukflag flag">
-    </div>
-  </div>
-
-  <div style="display: flex; margin-top: 2em;">
-    <div style="text-align: center; margin: auto;">
       <img src="title.png" alt="h3Sarmatia">
-
-      <div class="en">
-        <p><strong>h3Sarmatia</strong> is a town-creatures based template for random map generator of Heroes of Might and Magic 3 Horn of the Abyss HDMod</p>
-        <p style="font-size: 1.3em">To install it, download the .zip archive and unpack it to <pre>Heroes3/HotA_RMGTemplates/h3Sarmatia</pre></p>
-        <p style="font-size: 1.3em">Make sure, that following file is present: <pre>HotA_RMGTemplates/h3Sarmatia/rmg.txt</pre></p>
-        <br>
-        <p><strong><a href="https://www.youtube.com/watch?v=4AANR8BeL48" target="_blank">Trailer</a></strong></p>
-        <p><strong><a href="./quick.html">Instruction</a></strong></p>
-        <p><strong><a href="./h3Sarmatia.zip">Download</a></strong></p>
-        <p><strong><a href="./credits.html">Credits</a></strong></p>
-        <p><strong><a href="./other.html">Other templates sources</a></strong></p>
-      </div>
-
-      <div class="pl">
-        <p><strong>h3Sarmatia</strong> to oparty na natywnych stworzeniach szablon do generatora map Heroes of Might and Magic 3 Horn of the Abyss HDMod</p>
-        <p style="font-size: 1.3em">Aby go zainstalować, rozpakuj archiwum .zip do <pre>Heroes3/HotA_RMGTemplates/h3Sarmatia</pre></p>
-        <p style="font-size: 1.3em">Upewnij się, że istnieje plik: <pre>HotA_RMGTemplates/h3Sarmatia/rmg.txt</pre></p>
-        <br>
-        <p><strong><a href="https://www.youtube.com/watch?v=4AANR8BeL48" target="_blank">Trailer</a></strong></p>
-        <p><strong><a href="./quick.html">Instrukcja</a></strong></p>
-        <p><strong><a href="./h3Sarmatia.zip">Pobierz</a></strong></p>
-        <p><strong><a href="./credits.html">O Autorach</a></strong></p>
-        <p><strong><a href="./other.html">Szablony innych autorów</a></strong></p>
-      </div>
-
-      <div class="ru">
-        <p><strong>h3Sarmatia</strong> - это собственный шаблон на основе существ для генератора карт Heroes of Might and Magic 3 Horn of the Abyss HDMod.</p>
-        <p style="font-size: 1.3em">Для его установки скачайте .zip архив и распакуйте его в <pre>Heroes3/HotA_RMGTemplates/h3Sarmatia</pre></p>
-        <p style="font-size: 1.3em">Убедитесь, что следующий файл присутствует: <pre>HotA_RMGTemplates/h3Sarmatia/rmg.txt</pre></p>
-        <br>
-        <p><strong><a href="https://www.youtube.com/watch?v=4AANR8BeL48" target="_blank">Трейлер</a></strong></p>
-        <p><strong><a href="./quick.html">Инструкция</a></strong></p>
-        <p><strong><a href="./h3Sarmatia.zip">Скачать</a></strong></p>
-        <p><strong><a href="./credits.html">Создатели</a></strong></p>
-        <p><strong><a href="./other.html">Шаблоны других авторов</a></strong></p>
-      </div>
-
-      <div class="uk">
-        <p><strong>h3Sarmatia</strong> - новий шаблон для генератора карт Horn of the Abyss у Heroes of Might and Magic 3 HDMod</p>
-        <p style="font-size: 1.3em">Щоб установити його, розпакуйте файл .zip у <pre>Heroes3/HotA_RMGTemplates/h3Sarmatia</pre></p>
-        <p style="font-size: 1.3em">Переконайтеся, що файл існує: <pre>HotA_RMGTemplates/h3Sarmatia/rmg.txt</pre></p>
-        <br>
-        <p><strong><a href="https://www.youtube.com/watch?v=4AANR8BeL48" target="_blank">Трейлер</a></strong></p>
-        <p><strong><a href="./quick.html">Инструкция</a></strong></p>
-        <p><strong><a href="./h3Sarmatia.zip">Завантажити</a></strong></p>
-        <p><strong><a href="./credits.html">Про авторів</a></strong></p>
-        <p><strong><a href="./other.html">Шаблони інших авторів</a></strong></p>
-      </div>
+    </div>
+    <div style="font-style: italic; font-size: 1.1em; color: #b0b0b0;">
+      Developed 2018 - 2022, premiered in 2022
+    </div>
+    <img src="swieca.jpg" class="flag">
+    <div style="font-style: italic; font-size: 1.1em; color: #b0b0b0;">
+      I would like to apologize for everyone interested. I have no idea about marketing and I had no idea how to proceed.
+    </div>
+    <p></p>
+    <div style="font-style: italic; font-size: 1.1em; color: #b0b0b0;">
+      Gavin Magnus
     </div>
   </div>
-  
 
 </body>
 </html>
